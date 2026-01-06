@@ -3,160 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MR AFROBEAT | +255 </title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MR AFROBEAT | Official Artist Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFD700; /* Vibrant gold */
+            --accent: #FF4500; /* Orange red */
+            --bg: #0f0f1a;
+            --text: #f0f0f0;
+            --secondary: #00CED1;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 15, 26, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        nav a {
+            color: var(--text);
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://cdn.shopify.com/s/files/1/0871/7198/9839/files/geometric-mural-wallpaper-vibrant-circular-african-pattern-45XYZ123-6.jpg?v=1750739549');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 6rem;
+            color: var(--primary);
+            animation: glow 2s infinite alternate;
+        }
+        .hero p {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        .btn {
+            background: var(--primary);
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px var(--primary);
+        }
+        section {
+            padding: 100px 10%;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .track:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 20px 40px rgba(255,215,0,0.2);
+        }
+        .track img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .about {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+            padding: 150px 10%;
+        }
+        footer {
+            background: #000;
+            padding: 50px;
+            text-align: center;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 20px var(--primary); }
+            to { text-shadow: 0 0 40px var(--primary); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>MR AFROBEAT</h1>
-            <div class="subtitle">good music non-stop</div>
-        </header>
 
-        <div class="panel">
-            <div class="tab-container">
-                <div class="tab active" data-tab="basic">Basic</div>
-                <div class="tab" data-tab="advanced">Advanced</div>
-                <div class="tab" data-tab="proxy">Proxy</div>
-                <div class="tab" data-tab="terminal">Terminal</div>
+    <header>
+        <div class="logo">MR AFROBEAT</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#music">Music</a>
+            <a href="#tour">Tour</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>MR AFROBEAT</h1>
+        <p>Good Music Non-Stop | Bringing the Heat from Africa to the World</p>
+        <a href="#music" class="btn">Listen Now</a>
+    </section>
+
+    <section id="music">
+        <h2 class="section-title">Latest Releases</h2>
+        <div class="music-grid">
+            <div class="track">
+                <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2025/09/VISUAL-LANGUAGE-scaled.jpg" alt="Album Art">
+                <h3>Afro Fire</h3>
+                <p>New Single 2026</p>
+                <!-- Embed Spotify/YouTube player here -->
             </div>
-
-            <div class="tab-content active" id="basic-tab">
-                <div class="form-group">
-                    <label for="url">VICTIM URL:</label>
-                    <input type="text" id="url" placeholder="https://example.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="time">DURATION (SECONDS):</label>
-                    <input type="number" id="time" placeholder="60" min="1" value="60">
-                </div>
-
-                <div class="form-group">
-                    <label for="intensity">INTENSITY: <span class="tooltip">(?)
-                        <span class="tooltiptext">Higher intensity uses more resources but may be more effective</span>
-                    </span></label>
-                    <select id="intensity">
-                        <option value="low">Low (4 threads)</option>
-                        <option value="medium" selected>Medium (8 threads)</option>
-                        <option value="high">High (16 threads)</option>
-                        <option value="extreme">Extreme (32 threads)</option>
-                    </select>
-                </div>
+            <div class="track">
+                <img src="https://i8.amplience.net/i/naras/Rema-Afrobeats-evolution.jpg" alt="Album Art">
+                <h3>Vibes Unlimited</h3>
+                <p>Album Out Now</p>
             </div>
-
-            <div class="tab-content" id="advanced-tab">
-                <div class="form-group">
-                    <label for="method">ATTACK METHOD:</label>
-                    <select id="method">
-                        <option value="mixed" selected>Mixed Methods</option>
-                        <option value="get">GET Flood</option>
-                        <option value="post">POST Flood</option>
-                        <option value="head">HEAD Flood</option>
-                        <option value="random">Random Methods</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="delay">REQUEST DELAY (ms):</label>
-                    <input type="number" id="delay" placeholder="100" min="0" value="100">
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="enable-cookies" checked>
-                        ENABLE COOKIES/SESSION
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="enable-referers" checked>
-                        RANDOM REFERERS
-                    </label>
-                </div>
-            </div>
-
-            <div class="tab-content" id="proxy-tab">
-                <div class="form-group">
-                    <label for="proxy-list">PROXY LIST (IP:PORT, one per line):</label>
-                    <textarea id="proxy-list" rows="5" placeholder="192.168.1.1:8080\n103.145.45.33:3128"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="rotate-proxies" checked>
-                        ROTATE PROXIES
-                    </label>
-                </div>
-            </div>
-
-            <div class="tab-content" id="terminal-tab">
-                <div class="form-group">
-                    <label>LOFT TERMINAL:</label>
-                    <div id="console-terminal" style="height: 200px;"></div>
-                    <div class="terminal-line">
-                        <span id="terminal-prompt">root@shadow:~#</span>
-                        <input type="text" id="terminal-input" autocomplete="off">
-                    </div>
-                </div>
-            </div>
-
-            <button id="startBtn">INITIATE ATTACK</button>
-            <button id="stopBtn" class="danger" disabled>ABORT</button>
-            <button id="generateScriptBtn">GENERATE NODE SCRIPT</button>
-
-            <div class="progress-container hidden" id="progress-container">
-                <div class="progress-bar" id="progress-bar"></div>
-            </div>
-
-            <div id="status" class="info">STATUS: READY</div>
-        </div>
-
-        <div class="panel">
-            <div class="stats">
-                <div class="stat-box">
-                    <div class="stat-value" id="reqCount">0</div>
-                    <div class="stat-label">Requests</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value" id="successCount">0</div>
-                    <div class="stat-label">Success</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value" id="errorCount">0</div>
-                    <div class="stat-label">Errors</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value" id="rpsCount">0</div>
-                    <div class="stat-label">Req/Sec</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value" id="workersCount">0</div>
-                    <div class="stat-label">Threads</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value" id="proxyCount">0</div>
-                    <div class="stat-label">Proxies</div>
-                </div>
+            <div class="track">
+                <img src="https://www.rollingstone.com/wp-content/uploads/2022/01/RS_Afrobeats_OPEN_F_RGB.jpg?w=1581&h=1054&crop=1" alt="Album Art">
+                <h3>Non-Stop Rhythm</h3>
+                <p>Coming Soon</p>
             </div>
         </div>
+    </section>
 
-        <div class="panel">
-            <h3>ATTACK CONSOLE <span style="float: right; font-size: 0.8rem;"><span id="console-line-count">0</span> lines</span></h3>
-            <div id="console"></div>
-            <div style="text-align: right; margin-top: 5px;">
-                <button id="clearConsoleBtn" style="padding: 5px 10px; font-size: 0.8rem;">Clear Console</button>
-                <button id="exportLogsBtn" style="padding: 5px 10px; font-size: 0.8rem;">Export Logs</button>
-            </div>
-        </div>
+    <section class="about" id="about">
+        <h2 class="section-title">About MR AFROBEAT</h2>
+        <p style="font-size: 1.5rem; max-width: 900px; margin: 0 auto;">
+            Rising star in the global Afrobeats scene, blending infectious rhythms with powerful storytelling. 
+            From the streets of Tanzania (+255) to international stages — good music non-stop.
+        </p>
+        <img src="https://kxt.org/wp-content/uploads/2025/06/baba_crop-1024x576.jpg" alt="Artist Performing" style="width:80%; max-width:800px; border-radius:20px; margin-top:50px;">
+    </section>
 
-        <footer>
-            <strong>Note:</strong> Made by Lord Shadow.
-            <div style="margin-top: 5px; font-size: 0.7rem;">v3.1.4 | Shadow Systems</div>
-        </footer>
-    </div>
+    <section id="tour">
+        <h2 class="section-title">Tour Dates</h2>
+        <p>Coming to a city near you — stay tuned for 2026 world tour announcements!</p>
+    </section>
 
-    <script src="script.js"></script>
+    <footer id="contact">
+        <p>&copy; 2026 MR AFROBEAT | All Rights Reserved</p>
+        <p>Follow on Spotify, Apple Music, Instagram, TikTok</p>
+    </footer>
+
 </body>
 </html>
