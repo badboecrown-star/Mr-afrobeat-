@@ -1,303 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MR AFROBEAT | Official Artist Site</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #FFD700; /* Vibrant gold */
-            --accent: #FF4500; /* Orange red */
-            --bg: #0f0f1a;
-            --text: #f0f0f0;
-            --secondary: #00CED1;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(15, 15, 26, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 0.3s;
-        }
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-        }
-        nav a {
-            color: var(--text);
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: var(--primary);
-        }
-        /* Matangazo Section - Juu Baada ya Hero */
-        #ads {
-            padding: 50px 10%;
-            background: linear-gradient(135deg, var(--accent), var(--secondary));
-            text-align: center;
-        }
-        #ads h2 {
-            font-size: 3rem;
-            color: var(--primary);
-        }
-        .ad-banner {
-            margin: 30px auto;
-            max-width: 800px;
-            background: rgba(0,0,0,0.5);
-            padding: 20px;
-            border-radius: 20px;
-            font-size: 1.5rem;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AfroPlug – Presets & Sample Packs za Kitaalamu | Tanzania</title>
+  <meta name="description" content="Nunua Afrobeat presets, Amapiano drum kits, Tanzanian vocal chops na Gospel packs. Halali na quality ya juu."/>
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --text: #e0e0ff;
+      --accent: #00ff9d;
+      --card: #1a1a2e;
+      --border: #333366;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(to bottom, #000, var(--bg));
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { font-size: 2.4rem; margin-bottom: 0.5rem; color: var(--accent); }
+    .tagline { font-size: 1.1rem; opacity: 0.9; }
 
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://cdn.shopify.com/s/files/1/0871/7198/9839/files/geometric-mural-wallpaper-vibrant-circular-african-pattern-45XYZ123-6.jpg?v=1750739549');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 6rem;
-            color: var(--primary);
-            animation: glow 2s infinite alternate;
-        }
-        .hero p {
-            font-size: 1.8rem;
-            max-width: 800px;
-            margin: 20px 0;
-        }
-        .btn {
-            background: var(--primary);
-            color: #000;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 30px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px var(--primary);
-        }
-        section {
-            padding: 100px 10%;
-            text-align: center;
-        }
-        .section-title {
-            font-size: 3.5rem;
-            margin-bottom: 50px;
-            color: var(--primary);
-        }
-        .music-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .track {
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-        .track:hover {
-            transform: translateY(-20px);
-            box-shadow: 0 20px 40px rgba(255,215,0,0.2);
-        }
-        .track img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-        .track audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-        .about {
-            background: linear-gradient(135deg, var(--accent), var(--secondary));
-            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-            padding: 150px 10%;
-        }
-        .comments {
-            background: #000;
-            padding: 100px 10%;
-        }
-        .comments form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .comments input, .comments textarea {
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border: none;
-            border-radius: 10px;
-            color: var(--text);
-        }
-        .comments button {
-            background: var(--primary);
-            color: #000;
-            padding: 15px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        footer {
-            background: #000;
-            padding: 50px;
-            text-align: center;
-        }
-        @keyframes glow {
-            from { text-shadow: 0 0 20px var(--primary); }
-            to { text-shadow: 0 0 40px var(--primary); }
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 4rem; }
-        }
-    </style>
+    .search-bar {
+      margin: 1.5rem auto;
+      max-width: 600px;
+      padding: 0 1rem;
+    }
+    #searchInput {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      background: #222;
+      color: white;
+      outline: none;
+    }
+    #searchInput:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(0,255,157,0.3); }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      padding: 0 1rem;
+    }
+    .cat-btn {
+      padding: 0.6rem 1.3rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .cat-btn:hover, .cat-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,255,157,0.12);
+    }
+    .product-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #111;
+    }
+    .product-info {
+      padding: 1.2rem;
+    }
+    .product-title { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .product-desc { font-size: 0.95rem; opacity: 0.85; margin-bottom: 1rem; min-height: 60px; }
+    .price { font-size: 1.4rem; color: var(--accent); font-weight: bold; margin-bottom: 0.8rem; }
+    .buy-btn {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .buy-btn:hover { background: #00cc7a; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #000;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .products { grid-template-columns: 1fr; padding: 1rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Login ya Kawaida (Simple Form) -->
-    <section id="login" style="padding: 50px 10%; background: rgba(0,0,0,0.7); position: fixed; top: 100px; width: 100%; z-index: 999; display: none;">
-        <form style="max-width: 400px; margin: 0 auto; background: var(--bg); padding: 30px; border-radius: 20px;">
-            <h2 style="color: var(--primary);">Login</h2>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit" class="btn">Login</button>
-            <p style="margin-top: 20px;"><a href="#" style="color: var(--secondary);">Register</a> | <a href="#" style="color: var(--secondary);">Forgot Password?</a></p>
-        </form>
-    </section>
+  <header>
+    <h1>AfroPlug.co.tz</h1>
+    <p class="tagline">Presets, Drum Kits, Sample Packs & MIDI za Afrobeat, Amapiano na Gospel – Sound ya Tanzania</p>
+  </header>
 
-    <header>
-        <div class="logo">MR AFROBEAT</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#music">Music</a>
-            <a href="#tour">Tour</a>
-            <a href="#about">About</a>
-            <a href="#comments">Comments</a>
-            <a href="#login" onclick="document.getElementById('login').style.display='block'; return false;">Login</a>
-        </nav>
-    </header>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Tafuta preset... (k.m. Amapiano log drum)" />
+  </div>
 
-    <section class="hero" id="home">
-        <h1>MR AFROBEAT</h1>
-        <p>Good Music Non-Stop | Bringing the Heat from Africa to the World</p>
-        <a href="#music" class="btn">Listen Now</a>
-    </section>
+  <div class="categories">
+    <button class="cat-btn active" data-category="all">Zote</button>
+    <button class="cat-btn" data-category="afrobeat">Afrobeat</button>
+    <button class="cat-btn" data-category="amapiano">Amapiano</button>
+    <button class="cat-btn" data-category="gospel">Gospel</button>
+    <button class="cat-btn" data-category="samples">Sample Packs</button>
+  </div>
 
-    <!-- Matangazo yawe Juu -->
-    <section id="ads">
-        <h2 class="section-title">Matangazo / Sponsors</h2>
-        <div class="ad-banner">Sponsored: New Afrobeats Tour 2026 - Tickets Available Now!</div>
-        <div class="ad-banner">Partner: Spotify - Stream MR AFROBEAT Playlist</div>
-        <div class="ad-banner">Ad: Buy Official Merch - Limited Edition 2026 Collection</div>
-    </section>
+  <section class="products" id="products">
+    <!-- Bidhaa za mfano – unaweza kuongeza zaidi -->
+    <div class="product-card" data-category="afrobeat">
+      <img src="https://via.placeholder.com/400x180/111/00ff9d?text=Afrobeat+Vol+1" alt="Afrobeat Preset Pack" class="product-img"/>
+      <div class="product-info">
+        <h3 class="product-title">Afrobeat Supreme Pack</h3>
+        <p class="product-desc">50+ presets kwa Serum & Vital + MIDI patterns. Perfect kwa beat za Diamond Platnumz style.</p>
+        <div class="price">TZS 35,000</div>
+        <a href="#payment" class="buy-btn">Nunua Sasa</a>
+      </div>
+    </div>
 
-    <section id="music">
-        <h2 class="section-title">Latest Releases & Playlist</h2>
-        <p>Direct play na download links za nyimbo (sample free afrobeats tracks)</p>
-        <div class="music-grid">
-            <div class="track">
-                <img src="https://files.catbox.moe/990neg.JPG" alt="Afro Fire Cover">
-                <h3>Afro Fire</h3>
-                <p>New Single 2026</p>
-                <audio controls>
-                    <source src="https://files.catbox.moe/sk6u7h.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <p><small>(Demo: Replace with real catbox link)</small></p>
-            </div>
-            <div class="track">
-                <img src="https://image.okayafrica.com/134482.webp?width=960" alt="Vibes Unlimited Cover">
-                <h3>Vibes Unlimited</h3>
-                <p>Album Out Now</p>
-                <audio controls>
-                    <source src="https://files.catbox.moe/example-vibes.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track">
-                <img src="https://i.ytimg.com/vi/aToOuovhw8c/hq720.jpg" alt="Non-Stop Rhythm Cover">
-                <h3>Non-Stop Rhythm</h3>
-                <p>Coming Soon</p>
-                <audio controls>
-                    <source src="https://files.catbox.moe/example-rhythm.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            <div class="track">
-                <img src="https://www.shutterstock.com/image-vector/disco-funk-soul-music-fashion-260nw-2302812523.jpg" alt="Extra Track">
-                <h3>Extra Vibes</h3>
-                <audio controls>
-                    <source src="https://files.catbox.moe/example-extra.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-        </div>
-    </section>
+    <div class="product-card" data-category="amapiano">
+      <img src="https://via.placeholder.com/400x180/111/00ff9d?text=Amapiano+Log+Drums" alt="Amapiano Drum Kit" class="product-img"/>
+      <div class="product-info">
+        <h3 class="product-title">Amapiano Log Drum Madness</h3>
+        <p class="product-desc">80+ log drum one-shots, percussions na full kits. Kabla ya ku-release next hit yako!</p>
+        <div class="price">TZS 25,000</div>
+        <a href="#payment" class="buy-btn">Nunua Sasa</a>
+      </div>
+    </div>
 
-    <section class="about" id="about">
-        <h2 class="section-title">About MR AFROBEAT</h2>
-        <p style="font-size: 1.5rem; max-width: 900px; margin: 0 auto;">
-            Rising star in the global Afrobeats scene, blending infectious rhythms with powerful storytelling. 
-            From the streets of Tanzania (+255) to international stages — good music non-stop.
-        </p>
-        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=122254695776180033" alt="Artist Performing" style="width:80%; max-width:800px; border-radius:20px; margin-top:50px;">
-    </section>
+    <div class="product-card" data-category="gospel">
+      <img src="https://via.placeholder.com/400x180/111/00ff9d?text=Gospel+Worship+MIDI" alt="Gospel MIDI Pack" class="product-img"/>
+      <div class="product-info">
+        <h3 class="product-title">Gospel Worship MIDI Collection</h3>
+        <p class="product-desc">150+ chords & progressions kwa worship tracks. Inafaa FL Studio na Ableton.</p>
+        <div class="price">TZS 20,000</div>
+        <a href="#payment" class="buy-btn">Nunua Sasa</a>
+      </div>
+    </div>
 
-    <section id="tour">
-        <h2 class="section-title">Tour Dates</h2>
-        <p>Coming to a city near you — stay tuned for 2026 world tour announcements!</p>
-    </section>
+    <!-- Ongeza bidhaa zaidi hapa kama unataka -->
+  </section>
 
-    <!-- Sehemu ya Comments - Chini Kabisa -->
-    <section class="comments" id="comments">
-        <h2 class="section-title">Leave a Comment</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Comment" rows="5" required></textarea>
-            <button type="submit">Submit Comment</button>
-        </form>
-        <div style="margin-top: 50px;">
-            <h3>Recent Comments</h3>
-            <p><strong>Fan1:</strong> Best Afrobeats ever! 🔥</p>
-            <p><strong>Fan2:</strong> Can't wait for the tour!</p>
-        </div>
-    </section>
+  <a href="https://wa.me/255yourphonenumber?text=Habari%2C+ninataka+kununuwa+preset" class="whatsapp-float" target="_blank">💬</a>
 
-    <footer id="contact">
-        <p>&copy; 2026 MR AFROBEAT | All Rights Reserved</p>
-        <p>Follow on Spotify, Apple Music, Instagram, TikTok</p>
-    </footer>
+  <footer>
+    <p>&copy; 2026 AfroPlug.co.tz | Halali 100% • Bei poa • Support kupitia WhatsApp</p>
+  </footer>
 
+  <script>
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('.product-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      products.forEach(card => {
+        const title = card.querySelector('.product-title').textContent.toLowerCase();
+        const desc  = card.querySelector('.product-desc').textContent.toLowerCase();
+        card.style.display = (title.includes(term) || desc.includes(term)) ? 'block' : 'none';
+      });
+    });
+
+    // Category filter
+    const catButtons = document.querySelectorAll('.cat-btn');
+    catButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        catButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+        products.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
