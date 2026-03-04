@@ -1,296 +1,212 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AfroPlug – Presets & Sample Packs za Kitaalamu | Tanzania</title>
-  <meta name="description" content="Nunua Afrobeat presets, Amapiano drum kits, Tanzanian vocal chops na Gospel packs. Halali na quality ya juu."/>
+  <title>Your Website Title</title>
   
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Basic meta tags (good for SEO & social sharing) -->
+  <meta name="description" content="A modern website built in 2026">
+  <meta name="author" content="Boydn">
+  
+  <!-- Open Graph / Social media preview -->
+  <meta property="og:title" content="Your Cool Website">
+  <meta property="og:description" content="Something interesting is happening here...">
+  <meta property="og:image" content="https://your-site.com/og-image.jpg">
+  <meta property="og:url" content="https://your-site.com">
+  
+  <!-- Favicon (replace with your own) -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   
   <style>
     :root {
-      --bg: #0a0a15;
-      --text: #e5e5ff;
-      --accent: #00ff9d;
-      --accent-dark: #00cc7a;
-      --card: #141422;
-      --border: #2a2a4a;
-      --gradient: linear-gradient(135deg, #0f0f1a, #1a0033);
+      --primary: #6366f1;       /* indigo-500 */
+      --primary-dark: #4f46e5;
+      --bg: #0f172a;            /* slate-900 */
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --card: #1e293b;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--gradient);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      min-height: 100vh;
+      min-height: 100dvh;
     }
+
     header {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.7), var(--bg));
-      padding: 4rem 1rem 2rem;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(0,255,157,0.08), transparent 60%);
-      pointer-events: none;
-    }
-    h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 3.2rem;
-      margin-bottom: 0.6rem;
-      color: var(--accent);
-      text-shadow: 0 0 20px rgba(0,255,157,0.4);
-    }
-    .tagline {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-
-    .search-bar {
-      margin: 2.5rem auto;
-      max-width: 700px;
-      padding: 0 1.5rem;
-    }
-    #searchInput {
+      position: fixed;
+      top: 0;
       width: 100%;
-      padding: 1.1rem 1.8rem;
-      font-size: 1.1rem;
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      background: rgba(30,30,50,0.6);
-      color: white;
-      backdrop-filter: blur(8px);
-      outline: none;
-      transition: all 0.3s;
-    }
-    #searchInput:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 20px rgba(0,255,157,0.25);
-    }
-
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
-      margin: 2rem 0;
-      padding: 0 1rem;
-    }
-    .cat-btn {
-      padding: 0.8rem 1.8rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      color: var(--text);
-      cursor: pointer;
-      font-weight: 500;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.12);
       transition: all 0.3s ease;
     }
-    .cat-btn:hover, .cat-btn.active {
-      background: var(--accent);
-      color: #000;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,255,157,0.25);
-    }
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem 1.5rem;
+    nav {
       max-width: 1400px;
       margin: 0 auto;
-    }
-    .product-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      position: relative;
-    }
-    .product-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(0,255,157,0.15);
-    }
-    .product-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      background: #0a0a15;
-    }
-    .product-info {
-      padding: 1.5rem;
-    }
-    .product-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 0.7rem;
-    }
-    .product-desc {
-      font-size: 0.98rem;
-      opacity: 0.85;
-      margin-bottom: 1.2rem;
-      min-height: 70px;
-    }
-    .price {
-      font-size: 1.6rem;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    .buy-btn {
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      background: var(--accent);
-      color: #000;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    .buy-btn:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #25D366;
-      color: white;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
+      padding: 1rem 2rem;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      font-size: 2.4rem;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-      text-decoration: none;
-      z-index: 1000;
-      transition: transform 0.3s;
     }
-    .whatsapp-float:hover { transform: scale(1.1); }
 
-    footer {
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: white;
+    }
+
+    main {
+      padding-top: 6rem;
+    }
+
+    .hero {
+      min-height: 90dvh;
+      display: grid;
+      place-items: center;
       text-align: center;
-      padding: 3rem 1rem;
-      background: #000;
-      border-top: 1px solid var(--border);
-      margin-top: 4rem;
-      font-size: 0.95rem;
-      opacity: 0.8;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #c084fc, #6366f1, #a5b4fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 0.95;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-light);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
     }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.6rem; }
-      .products { grid-template-columns: 1fr; padding: 1.5rem; }
-      .whatsapp-float { bottom: 20px; right: 20px; width: 60px; height: 60px; font-size: 2rem; }
+      .nav-links {
+        display: none; /* → you can add mobile menu later */
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>AfroPlug.co.tz</h1>
-    <p class="tagline">Presets, Drum Kits, Sample Packs & MIDI za Afrobeat, Amapiano na Gospel – Sound ya Tanzania halisi</p>
+    <nav>
+      <a href="#" class="logo">Boydn</a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Tafuta preset au kit... (mfano: log drum, afrobeat serum)" />
-  </div>
-
-  <div class="categories">
-    <button class="cat-btn active" data-category="all">Zote</button>
-    <button class="cat-btn" data-category="afrobeat">Afrobeat</button>
-    <button class="cat-btn" data-category="amapiano">Amapiano</button>
-    <button class="cat-btn" data-category="gospel">Gospel</button>
-    <button class="cat-btn" data-category="samples">Sample Packs</button>
-  </div>
-
-  <section class="products" id="products">
-
-    <div class="product-card" data-category="afrobeat">
-      <img src="https://images.unsplash.com/photo-1611339555312-e607c8352fd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Afrobeat Preset Pack" class="product-img"/>
-      <div class="product-info">
-        <h3 class="product-title">Afrobeat Supreme Pack</h3>
-        <p class="product-desc">50+ presets kwa Serum & Vital + MIDI patterns. Perfect kwa beat za Diamond Platnumz, Rayvanny na style yako mwenyewe.</p>
-        <div class="price">TZS 35,000</div>
-        <a href="https://wa.me/255678715224?text=Ninataka%20kununuwa%20Afrobeat%20Supreme%20Pack" class="buy-btn">Nunua Sasa</a>
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <h1>Build Something<br>Amazing Today</h1>
+        <p>
+          Modern web experiences • Clean code • Fast performance • 
+          Made with passion in Dar es Salaam
+        </p>
+        <div style="margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#" class="btn">Get Started</a>
+          <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="product-card" data-category="amapiano">
-      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27c1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Amapiano Log Drum Kit" class="product-img"/>
-      <div class="product-info">
-        <h3 class="product-title">Amapiano Log Drum Madness</h3>
-        <p class="product-desc">80+ log drum one-shots, percussions, full kits na patterns. Tayari kwa next banger yako ya Amapiano TZ!</p>
-        <div class="price">TZS 25,000</div>
-        <a href="https://wa.me/255678715224?text=Ninataka%20kununuwa%20Amapiano%20Log%20Drum%20Madness" class="buy-btn">Nunua Sasa</a>
-      </div>
-    </div>
-
-    <div class="product-card" data-category="gospel">
-      <img src="https://images.unsplash.com/photo-1507836353240-5a0d2a8e9e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gospel Worship MIDI" class="product-img"/>
-      <div class="product-info">
-        <h3 class="product-title">Gospel Worship MIDI Collection</h3>
-        <p class="product-desc">150+ chords, progressions na voicings kwa worship tracks. Inafaa FL Studio, Ableton na Logic.</p>
-        <div class="price">TZS 20,000</div>
-        <a href="https://wa.me/255678715224?text=Ninataka%20kununuwa%20Gospel%20Worship%20MIDI" class="buy-btn">Nunua Sasa</a>
-      </div>
-    </div>
-
-    <!-- Unaweza kuongeza bidhaa zaidi hapa -->
-
-  </section>
-
-  <a href="https://wa.me/255678715224?text=Habari%2C+ninataka+kununuwa+presets+au+sample+pack" class="whatsapp-float" target="_blank">💬</a>
-
-  <footer>
-    <p>© 2026 AfroPlug.co.tz | Halali 100% • Bei poa • Support kupitia WhatsApp 24/7</p>
-  </footer>
+    <!-- Add more sections here: about, projects, contact, etc. -->
+  </main>
 
   <script>
-    // Search
-    const searchInput = document.getElementById('searchInput');
-    const products = document.querySelectorAll('.product-card');
-
-    searchInput.addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase().trim();
-      products.forEach(card => {
-        const title = card.querySelector('.product-title').textContent.toLowerCase();
-        const desc  = card.querySelector('.product-desc').textContent.toLowerCase();
-        card.style.display = (title.includes(term) || desc.includes(term)) ? 'block' : 'none';
+    // Optional: simple scroll spy for nav (active link)
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
       });
-    });
-
-    // Category filter
-    const catButtons = document.querySelectorAll('.cat-btn');
-    catButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        catButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const category = btn.dataset.category;
-        products.forEach(card => {
-          card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
-        });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
       });
     });
   </script>
