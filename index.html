@@ -1,113 +1,33 @@
-<!DOCTYPE html>
-<html lang="sw">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pakua Video za TikTok & Facebook Bila Watermark</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
-      margin: 0;
-      padding: 20px;
-      color: #333;
-    }
-    .container {
-      max-width: 600px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    h1 {
-      color: #e91e63;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 14px;
-      margin: 20px 0;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-    button {
-      background: #e91e63;
-      color: white;
-      border: none;
-      padding: 14px 30px;
-      font-size: 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #c2185b;
-    }
-    #result {
-      margin-top: 25px;
-      font-size: 18px;
-      color: #333;
-    }
-    .note {
-      font-size: 14px;
-      color: #777;
-      margin-top: 30px;
-    }
-  </style>
-</head>
-<body>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial, sans-serif; line-height:1.6; color:#333; background:#f9f9f9; }
 
-  <div class="container">
-    <h1>Pakua Video Bila Watermark</h1>
-    <p>Wewe weka link ya TikTok au Facebook video hapa chini:</p>
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
 
-    <input type="text" id="urlInput" placeholder="https://www.tiktok.com/@user/video/12345..." />
+header { background:#2e7d32; color:white; padding:15px 0; position:sticky; top:0; z-index:100; }
+header h1 { float:left; }
+nav ul { list-style:none; float:right; }
+nav ul li { display:inline; margin-left:20px; }
+nav a { color:white; text-decoration:none; font-weight:bold; }
 
-    <button onclick="pakuaVideo()">Pakua Sasa</button>
+.hero { background:#e8f5e9; text-align:center; padding:100px 20px; }
+.hero h2 { font-size:3rem; margin-bottom:20px; }
+.btn { background:#2e7d32; color:white; padding:12px 30px; text-decoration:none; border-radius:5px; font-weight:bold; }
 
-    <div id="result"></div>
+.products { padding:60px 0; }
+.product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
+.product-card { background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; padding:20px; }
+.product-card img { width:100%; height:220px; object-fit:cover; border-radius:8px; }
+.price { font-size:1.4rem; color:#2e7d32; font-weight:bold; margin:10px 0; }
+.add-to-cart { background:#4caf50; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer; }
 
-    <div class="note">
-      Huduma hii inatumia tovuti za watu wengine (kama ssstik/snaptik). Ikiwa haifanyi kazi, jaribu kubadilisha huduma au tumia backend yako baadaye.
-    </div>
-  </div>
+.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:200; }
+.modal-content { background:white; margin:10% auto; padding:30px; width:90%; max-width:500px; border-radius:10px; position:relative; }
+.close { position:absolute; top:10px; right:20px; font-size:2rem; cursor:pointer; }
 
-  <script>
-    function pakuaVideo() {
-      const url = document.getElementById('urlInput').value.trim();
-      const resultDiv = document.getElementById('result');
+footer { background:#333; color:white; text-align:center; padding:20px; }
 
-      if (!url) {
-        resultDiv.innerHTML = "<p style='color:red;'>Tafadhali weka link halali!</p>";
-        return;
-      }
-
-      resultDiv.innerHTML = "<p>Inajaribu kupakua... Subiri kidogo...</p>";
-
-      // Chaguo za huduma zinazoweza kufanya kazi 2026 (jaribu moja moja)
-      const huduma = [
-        `https://ssstik.io/abc?url=${encodeURIComponent(url)}`,           // ssstik (TikTok + FB mara nyingi)
-        `https://snaptik.app/abc?url=${encodeURIComponent(url)}`,         // snaptik
-        `https://musicaldown.com/download?url=${encodeURIComponent(url)}`, // musicaldown
-        `https://tikmate.cc/download?url=${encodeURIComponent(url)}`      // tikmate
-      ];
-
-      // Fungua moja kwa moja (unaweza kuchagua moja tu au kutoa chaguo)
-      // Hapa tunaanza na ssstik kama default
-      window.open(huduma[0], '_blank');
-
-      resultDiv.innerHTML = `
-        <p>Ikiwa haikufunguka vizuri au ina watermark:</p>
-        <ul style="text-align:left; margin:20px auto; max-width:400px;">
-          <li>Jaribu moja ya link hizi moja kwa moja:</li>
-          \( {huduma.map(h => `<li><a href=" \){h}" target="_blank">${h.split('/')[2]}</a></li>`).join('')}
-        </ul>
-        <p au tumia programu ya yt-dlp kwa ubora bora zaidi.</p>
-      `;
-    }
-  </script>
-
-</body>
-</html>
+/* Responsive */
+@media (max-width:768px) {
+  nav ul { float:none; text-align:center; margin-top:10px; }
+  nav ul li { display:block; margin:10px 0; }
+}
