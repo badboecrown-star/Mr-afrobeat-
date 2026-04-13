@@ -1,161 +1,222 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>soko la Plugins na Samples</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .hero {
-            background-color: #007bff;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        .product-card {
-            margin-bottom: 30px;
-        }
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            border: none;
-        }
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BD Graphics | Ubunifu wa Kipekee</title>
+  <meta name="description" content="BD Graphics - Huduma za Graphics Design, Music Production, Video Production & Photography">
+  
+  <style>
+    :root {
+      --primary: linear-gradient(135deg, #8b00ff, #00f0ff);
+      --text: #ffffff;
+      --bg: #0a0a0a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=1920') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .logo {
+      width: 280px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 30px rgba(139, 0, 255, 0.6));
+    }
+    h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #8b00ff, #00f0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .tagline {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    .btn {
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      margin: 10px;
+    }
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      transform: scale(1.05);
+    }
+    section {
+      padding: 80px 5%;
+    }
+    .services {
+      background: #111;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      transition: transform 0.4s;
+      border: 1px solid #333;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: #00f0ff;
+    }
+    .service-icon {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+      z-index: 1000;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Toko la Plugins na Samples</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Nyumbani</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#products">Bidhaa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#comments">Maoni</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Wasiliana</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div>
+      <img src="https://i.imgur.com/0K2kI.png" alt="BD Graphics Logo" class="logo"> <!-- Badilisha link hii na logo yako halisi -->
+      <h1>BD GRAPHICS</h1>
+      <p class="tagline">Ubunifu wa Kipekee • Music • Video • Photography</p>
+      <a href="https://wa.me/255678715224" class="btn btn-whatsapp" target="_blank">
+        Wasiliana Nasi Kupitia WhatsApp
+      </a>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Karibu kwenye Soko la Plugins na Samples</h1>
-            <p>Tunauza plugins, samples na vitu vingine kwa FL Studio, Cubase 5 na zaidi. Bidhaa bora kwa muziki wako!</p>
-            <a href="https://wa.me/+25578715224?text=Ninataka%20kununua%20bidhaa" class="btn btn-light btn-lg whatsapp-btn">Wasiliana Sasa</a>
-        </div>
-    </section>
+  <!-- SERVICES -->
+  <section class="services">
+    <h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;">Huduma Zetu</h2>
+    <div class="service-grid">
 
-    <!-- Products Section -->
-    <section id="products" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Bidhaa Zetu</h2>
-            <div class="row">
-                <!-- FL Studio Plugins -->
-                <div class="col-md-4">
-                    <div class="card product-card">
-                        <img src="https://d29rinwu2hi5i3.cloudfront.net/article_media/6d38d2b4-ed65-414c-97d3-b0bc4549daa9/waves-fl-studio-screenshot.jpg" class="card-img-top" alt="FL Studio Plugin">
-                        <div class="card-body">
-                            <h5 class="card-title">Plugins za FL Studio</h5>
-                            <p class="card-text">Plugins bora za kuongeza sauti na effects kwenye FL Studio yako.</p>
-                            <a href="https://wa.me/255123456789?text=Ninataka%20kununua%20Plugins%20za%20FL%20Studio" class="btn btn-primary whatsapp-btn">Nunua Sasa</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cubase Plugins -->
-                <div class="col-md-4">
-                    <div class="card product-card">
-                        <img src="https://d29rinwu2hi5i3.cloudfront.net/article_media/d180add9-d4d7-452c-9f7e-e7b6aee3fd71/3.jpg" class="card-img-top" alt="Cubase Plugin">
-                        <div class="card-body">
-                            <h5 class="card-title">Plugins za Cubase 5</h5>
-                            <p class="card-text">Plugins maalum kwa Cubase 5 ili kuboresha muziki wako wa kiprofessional.</p>
-                            <a href="https://wa.me/255123456789?text=Ninataka%20kununua%20Plugins%20za%20Cubase%205" class="btn btn-primary whatsapp-btn">Nunua Sasa</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sample Packs -->
-                <div class="col-md-4">
-                    <div class="card product-card">
-                        <img src="https://postimg.cc/GH5dTBQ8?v=1630587440" class="card-img-top" alt="Sample Packs">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample Packs</h5>
-                            <p class="card-text">fabfilter Pro Q4 .</p>
-                            <a href="https://wa.me/255123456789?text=Ninataka%20kununua%20Sample%20Packs" class="btn btn-primary whatsapp-btn">Nunua Sasa</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>GRAPHICS DESIGN</h3>
+        <ul style="margin-top:15px; opacity:0.9;">
+          <li>Logo & Branding</li>
+          <li>Cards za Harusi, Birthday & Invitation</li>
+          <li>Posters, Flyers & Banners</li>
+          <li>Social Media Graphics</li>
+          <li>Packaging & Menu Design</li>
+        </ul>
+      </div>
 
-    <!-- Comments Section -->
-    <section id="comments" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Toa Maoni Yako</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Jina</label>
-                    <input type="text" class="form-control" id="name" placeholder="boydn">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Barua Pepe</label>
-                    <input type="email" class="form-control" id="email" placeholder="badboecrown@gmail.com">
-                </div>
-                <div class="mb-3">
-                    <label for="comment" class="form-label">Maoni</label>
-                    <textarea class="form-control" id="comment" rows="4" placeholder="Andika maoni yako hapa"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Tuma Maoni</button>
-            </form>
-            <p class="mt-3 text-muted">Note: Hii ni form ya mfano. Ili kufanya ifanye kazi, unahitaji backend kama PHP au JavaScript.</p>
-        </div>
-    </section>
+      <div class="service-card">
+        <div class="service-icon">🎵</div>
+        <h3>MUSIC PRODUCTION</h3>
+        <ul style="margin-top:15px; opacity:0.9;">
+          <li>Kutengeneza Beats & Instrumentals</li>
+          <li>Recording, Mixing & Mastering</li>
+          <li>Voice Over & Jingles</li>
+          <li>Music kwa Matangazo na Video</li>
+        </ul>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container text-center">
-            <h2>Wasiliana Nasi</h2>
-            <p>Wasiliana moja kwa moja kupitia WhatsApp kwa maelezo zaidi au kununua.</p>
-            <a href="https://wa.me/255123456789" class="btn btn-lg whatsapp-btn">Piga Simu kwenye WhatsApp</a>
-            <p class="mt-3">Namba: +255678715224 ()</p>
-        </div>
-    </section>
+      <div class="service-card">
+        <div class="service-icon">🎥</div>
+        <h3>VIDEO PRODUCTION</h3>
+        <ul style="margin-top:15px; opacity:0.9;">
+          <li>Video za Matangazo (Ads & Promos)</li>
+          <li>Wedding & Event Videos</li>
+          <li>Corporate & Company Profile Videos</li>
+          <li>YouTube & Reels Editing</li>
+          <li>Drone Shots</li>
+        </ul>
+      </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 soko la Plugins na Samples. Haki zote zimehifadhiwa.</p>
-        </div>
-    </footer>
+      <div class="service-card">
+        <div class="service-icon">📸</div>
+        <h3>PHOTO SHOOT</h3>
+        <ul style="margin-top:15px; opacity:0.9;">
+          <li>Studio & Outdoor Photography</li>
+          <li>Weddings, Engagements & Pre-wedding</li>
+          <li>Product Photography</li>
+          <li>Portraits & Family Shoots</li>
+          <li>Events Coverage</li>
+        </ul>
+      </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>WEBSITE DEVELOPMENT</h3>
+        <ul style="margin-top:15px; opacity:0.9;">
+          <li>Kuunda Websites za Biashara</li>
+          <li>E-commerce & Online Shops</li>
+          <li>Blogs na Portfolio Sites</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section style="text-align:center; background: linear-gradient(135deg, #8b00ff, #00f0ff); padding: 80px 20px;">
+    <h2 style="font-size:2.8rem; color:#000;">Tayari kufanya biashara yako iwe ya kipekee?</h2>
+    <p style="font-size:1.3rem; margin:20px 0; color:#000;">Tumia ujumbe huu kuwasiliana nasi au kutuma maelezo ya kazi yako.</p>
+    <a href="https://wa.me/255678715224?text=Habari%20BD%20Graphics,%20nahitaji%20huduma%20ya..." 
+       class="btn btn-whatsapp" target="_blank" style="font-size:1.3rem; padding:18px 40px;">
+       💬 Wasiliana Nasi Sasa Kupitia WhatsApp
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 BD Graphics - Dar es Salaam, Tanzania</p>
+    <p>Simu/WhatsApp: <strong>+255 678 715 224</strong></p>
+    <p>Tunakupa ubora wa hali ya juu kwa bei nafuu</p>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/255678715224" class="whatsapp-float" target="_blank">
+    💬
+  </a>
+
 </body>
 </html>
